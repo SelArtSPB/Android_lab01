@@ -5,13 +5,13 @@
     <string name="label_result">Result:</string>
     <string name="label_resultanswer">___</string>
     <string name="Button_ADD">+</string>
-    <string name="Button_SUB">-</string>
+    <string name="Button_SUB">—</string>
     <string name="Button_MULT">*</string>
     <string name="Button_DIV">/</string>
     <string name="Button_SIN">SIN</string>
     <string name="Button_COS">COS</string>
     <string name="Button_TAN">TAN</string>
     <string name="Button_SQRT">√</string>
-    <string name="Button_POW">X^n</string>
+    <string name="Button_POW">X^</string>
 
 </resources>

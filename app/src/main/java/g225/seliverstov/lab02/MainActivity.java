@@ -8,14 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
+    }
     public void base(View v)
     {
         EditText txt_A = findViewById(R.id.TextBoxA);
@@ -35,47 +37,44 @@ public class MainActivity extends AppCompatActivity {
         String Action_A = txt_A.getText().toString();
         String Action_B = txt_B.getText().toString();
 
-        double a = 0, b = 0;
-        try
-        {
-            a = Double.parseDouble(Action_A);
-            b = Double.parseDouble(Action_B);
-        }
-        catch (Exception e1)
-        {
-         txt_Res.setText("один или оба поля пустые");
-         return;
-        }
 
-        double r = 0;
-        if (v == ADD) r = a + b;
-        if (v == SUB) r = a - b;
-        if (v == MULT) r = a * b;
-        if (v == DIV)
-        {
-            if (b == 0)
-            {
-             txt_Res.setText("деление на ноль невозможно");
-             return;
+        float a = 0,  r = 0 , b = 0;
+
+            try {
+                a = Float.parseFloat(Action_A);
+                b = Float.parseFloat(Action_B);
             }
-            r = a / b;
-        }
-        if (v == SIN)  r =Math.sin(a);
-        if (v == COS)  r = Math.cos(a);
-        if (v == TAN) r = Math.tan(a);
-        if (v == SQRT)
-        {
-            if (a < 0 || b < 0)
+            catch (Exception e1)
             {
-             txt_Res.setText("нельзя взять корень от отрицательного числа");
-             return;
+               txt_Res.setText("input blocks are empty or incorrect number format is entered");
+               return;
             }
-            r = Math.sqrt(a);
-        }
-        if (v == POW)
-        {
-            r = Math.pow(a, b);
-        }
+        if ( a != 0 && b != 0)
+            {
+                if (v == ADD) r = a + b;
+                if (v == SUB) r = a - b;
+                if (v == MULT) r = a * b;
+                if (v == DIV)
+                {
+                    if (b == 0)
+                    {
+                        txt_Res.setText("division by zero is impossible");
+                        return;
+                    }
+                    r = a / b;
+                }
+                if (v == POW) r = (float) Math.pow(a, b);
+                if (v == SIN) r = (float) Math.sin(a);
+                if (v == COS) r = (float) Math.cos(a);
+                if (v == TAN) r = (float) Math.tan(a);
+                if (v == SQRT) {
+                    if (a < 0) {
+                        txt_Res.setText("You can't take the sqrt of a negative number");
+                        return;
+                    }
+                    r = (float) Math.sqrt(a);
+                }
+            }
         String recordResult = String.valueOf(r);
         txt_Res.setText(recordResult);
     }
