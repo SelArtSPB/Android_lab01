@@ -87,6 +87,37 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checkedButton="@id/Numbers">
+
+                <RadioButton
+                    android:id="@+id/Numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="base"
+                    android:text="@string/Decimal" />
+
+                <RadioButton
+                    android:id="@+id/Radians"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="base"
+                    android:text="@string/Radians" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/buttonADD"
                 android:layout_width="wrap_content"
@@ -142,6 +173,7 @@
                 android:textSize="7pt" />
 
             <Button
+                android:textSize="7pt"
                 android:id="@+id/buttonCOS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

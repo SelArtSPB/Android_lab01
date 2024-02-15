@@ -13,5 +13,7 @@
     <string name="Button_TAN">TAN</string>
     <string name="Button_SQRT">√</string>
     <string name="Button_POW">X^</string>
+    <string name="Decimal">Numbers</string>
+    <string name="Radians">Radians</string>
 
 </resources>
